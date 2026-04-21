@@ -1,0 +1,134 @@
+/*
+ * navbar.css — Top Navigation Bar (BEM)
+ *
+ * Fixed-height bar pinned to the top of the app shell.
+ * Contains brand, primary nav links, and user actions.
+ */
+
+.navbar {
+  height:          var(--navbar-height);
+  background:      var(--brand-800);
+  color:           var(--color-text-inverse);
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  padding:         0 var(--space-6);
+  flex-shrink:     0;
+  /* Subtle bottom border to separate from page content */
+  border-bottom:   1px solid rgba(255,255,255,0.06);
+}
+
+/* ── Brand/logo cluster ── */
+.navbar__brand {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-3);
+  cursor:      pointer;
+  border:      none;
+  background:  none;
+  color:       var(--color-text-inverse);
+  padding:     var(--space-2);
+  border-radius: var(--radius-md);
+  transition:  background var(--transition-base);
+}
+.navbar__brand:hover { background: rgba(255,255,255,0.08); }
+
+.navbar__logo {
+  width:           2rem;
+  height:          2rem;
+  background:      rgba(255,255,255,0.12);
+  border-radius:   var(--radius-sm);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  flex-shrink:     0;
+}
+.navbar__logo svg { width: 1.125rem; height: 1.125rem; fill: var(--color-text-inverse); }
+
+.navbar__name {
+  font-size:   var(--text-md);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  /* hide on very small screens, keep logo */
+}
+
+/* ── Navigation links ── */
+.navbar__nav {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-1);
+}
+
+.navbar__link {
+  display:       flex;
+  align-items:   center;
+  gap:           var(--space-2);
+  padding:       var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size:     var(--text-sm);
+  font-weight:   var(--weight-medium);
+  color:         rgba(255,255,255,0.80);
+  transition:    background var(--transition-base), color var(--transition-base);
+  border:        none;
+  background:    none;
+  cursor:        pointer;
+  white-space:   nowrap;
+}
+.navbar__link:hover {
+  background: rgba(255,255,255,0.10);
+  color:      var(--color-text-inverse);
+}
+.navbar__link--active {
+  background: rgba(255,255,255,0.14);
+  color:      var(--color-text-inverse);
+}
+.navbar__link svg {
+  width:  1rem;
+  height: 1rem;
+  fill:   currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Sub-navigation (entrepreneur only) ── */
+.sub-nav {
+  height:        var(--subnav-height);
+  background:    var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding:       0 var(--space-6);
+  display:       flex;
+  align-items:   center;
+  gap:           var(--space-1);
+  flex-shrink:   0;
+}
+
+.sub-nav__link {
+  display:       flex;
+  align-items:   center;
+  gap:           var(--space-2);
+  padding:       0 var(--space-3);
+  height:        100%;
+  font-size:     var(--text-base);
+  font-weight:   var(--weight-medium);
+  color:         var(--color-text-secondary);
+  border:        none;
+  background:    none;
+  cursor:        pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px; /* overlap container border */
+  transition:    color var(--transition-base), border-color var(--transition-base);
+}
+.sub-nav__link:hover { color: var(--color-text-primary); }
+.sub-nav__link--active {
+  color:         var(--brand-700);
+  border-bottom-color: var(--brand-700);
+  font-weight:   var(--weight-semibold);
+}
+.sub-nav__link svg { width: 0.875rem; height: 0.875rem; fill: currentColor; }
+
+/* Responsive */
+@media (max-width: 639px) {
+  .navbar        { padding: 0 var(--space-4); }
+  .navbar__name  { display: none; }
+  .navbar__link span { display: none; }   /* icons only on mobile */
+  .sub-nav       { padding: 0 var(--space-4); }
+}

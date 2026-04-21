@@ -1,0 +1,45 @@
+/*
+ * table.css — Data Table Component (BEM)
+ */
+
+.data-table {
+  width:           100%;
+  border-collapse: collapse;
+}
+
+.data-table th {
+  padding:       0.75rem 1rem;
+  text-align:    left;
+  font-size:     var(--text-xs);
+  font-weight:   var(--weight-semibold);
+  color:         var(--color-text-muted);
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  border-bottom: 1px solid var(--color-border);
+  white-space:   nowrap;
+}
+
+.data-table th--right { text-align: right; }
+
+.data-table td {
+  padding:        0.875rem 1rem;
+  font-size:      var(--text-base);
+  border-bottom:  1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.data-table tbody tr:last-child td { border-bottom: none; }
+
+.data-table tbody tr {
+  transition: background var(--transition-base);
+}
+.data-table tbody tr:hover { background: var(--color-bg); }
+
+.data-table__name { font-weight: var(--weight-medium); color: var(--color-text-primary); }
+.data-table__desc { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-1); }
+
+.data-table__actions {
+  display:         flex;
+  gap:             var(--space-2);
+  justify-content: flex-end;
+}
