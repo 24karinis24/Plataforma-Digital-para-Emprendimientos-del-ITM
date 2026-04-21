@@ -1,0 +1,38 @@
+/*
+ * main.css — CSS Entry Point
+ *
+ * Single file linked from index.html.
+ * Imports are ordered by specificity cascade:
+ *   tokens → reset → base → layout → utilities → components → pages
+ *
+ * This pattern means:
+ *   - One <link> tag in HTML (clean markup)
+ *   - Each file is independently editable and reviewable
+ *   - Load order is explicit and intentional
+ */
+
+/* ── Foundation ── */
+@import url('./tokens.css');
+@import url('./reset.css');
+@import url('./base.css');
+@import url('./layout.css');
+@import url('./utilities.css');
+
+/* ── Components (specificity ~0,1,0) ── */
+@import url('./components/button.css');
+@import url('./components/form.css');
+@import url('./components/navbar.css');
+@import url('./components/footer.css');
+@import url('./components/card.css');
+@import url('./components/badge.css');
+@import url('./components/modal.css');
+@import url('./components/table.css');
+@import url('./components/misc.css');
+@import url('./components/image-upload.css');
+
+/* ── Pages (specificity ~0,1,0 with page-class scope) ── */
+@import url('./pages/auth.css');
+@import url('./pages/select-user.css');
+@import url('./pages/catalog.css');
+@import url('./pages/dashboard.css');
+@import url('./pages/profile.css');

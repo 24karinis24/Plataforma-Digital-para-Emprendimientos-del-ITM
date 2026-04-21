@@ -1,0 +1,38 @@
+/*
+ * base.css — Document Defaults & Typography
+ *
+ * Sets the baseline reading experience for the app.
+ * No component or page styles here — only element-level defaults.
+ */
+
+body {
+  font-family:    var(--font-sans);
+  font-size:      var(--text-base);
+  color:          var(--color-text-primary);
+  background:     var(--color-bg);
+}
+
+/* ── Heading scale ── */
+h1 { font-size: var(--text-2xl); font-weight: var(--weight-bold);    line-height: var(--leading-tight); }
+h2 { font-size: var(--text-xl);  font-weight: var(--weight-bold);    line-height: var(--leading-tight); }
+h3 { font-size: var(--text-lg);  font-weight: var(--weight-semibold);line-height: var(--leading-snug);  }
+h4 { font-size: var(--text-md);  font-weight: var(--weight-semibold);line-height: var(--leading-snug);  }
+h5 { font-size: var(--text-base);font-weight: var(--weight-semibold);line-height: var(--leading-snug);  }
+h6 { font-size: var(--text-sm);  font-weight: var(--weight-semibold);line-height: var(--leading-normal);}
+
+/* ── Body text ── */
+p {
+  color:       var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Inline elements ── */
+strong { font-weight: var(--weight-semibold); }
+small  { font-size:   var(--text-sm); }
+
+/* ── Links ── */
+a {
+  color:      var(--color-action);
+  transition: color var(--transition-base);
+}
+a:hover { color: var(--color-action-hover); }

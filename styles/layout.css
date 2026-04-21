@@ -1,0 +1,230 @@
+/*
+ * layout.css — App Shell & Structural Layouts
+ *
+ * Defines the macro-level structure: the app viewport,
+ * fixed chrome (navbar, sub-nav), page containers and grid systems.
+ * No visual decoration (colors, shadows) — only placement.
+ */
+
+/* ═══════════════════════════════════════
+   APP SHELL
+   Vertical stack: navbar / [sub-nav] / page
+═══════════════════════════════════════ */
+.app-shell {
+  min-height: 100vh;
+  display:    flex;
+  flex-direction: column;
+}
+
+/* Page area grows to fill remaining space */
+.app-shell__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ═══════════════════════════════════════
+   CONTAINERS
+   Constrain content width with consistent padding.
+═══════════════════════════════════════ */
+
+/* Default: full-width with horizontal padding */
+.container {
+  width:   100%;
+  padding: 0 var(--space-6);
+}
+
+/* Bounded: max-width + centered */
+.container--bounded {
+  max-width: var(--content-max-width);
+  margin:    0 auto;
+}
+
+/* Narrow: for forms and single-column pages */
+.container--narrow {
+  max-width: var(--content-narrow);
+  margin:    0 auto;
+}
+
+/* Page-level wrapper: padding top/bottom + horizontal */
+.page {
+  padding:   var(--space-8) var(--space-6);
+  max-width: var(--content-max-width);
+  margin:    0 auto;
+  width:     100%;
+}
+
+.page--narrow {
+  max-width: var(--content-narrow);
+}
+
+/* Full-bleed: no padding, no max-width (buyer catalog) */
+.page--full {
+  padding:   0;
+  max-width: none;
+  margin:    0;
+}
+
+/* ── Page header block ── */
+.page-header {
+  margin-bottom: var(--space-8);
+}
+
+.page-header__title {
+  font-size:     var(--text-3xl);
+  font-weight:   var(--weight-bold);
+  color:         var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.page-header__subtitle {
+  font-size: var(--text-base);
+  color:     var(--color-text-secondary);
+}
+
+
+/* ═══════════════════════════════════════
+   GRID SYSTEM
+   Named semantic grids — not generic col-N.
+═══════════════════════════════════════ */
+
+/* Stats: auto-fit min 220px */
+.grid--stats {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   var(--space-4);
+}
+
+/* Products: 4 columns on desktop, scales down */
+.grid--products {
+  display:               grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:                   var(--space-4);
+}
+
+/* Section header: title left, action right */
+.section-header {
+  display:         flex;
+  align-items:     flex-end;
+  justify-content: space-between;
+  gap:             var(--space-4);
+  margin-bottom:   var(--space-6);
+}
+
+.section-header__info { flex: 1; }
+
+.section-header__title {
+  font-size:     var(--text-2xl);
+  font-weight:   var(--weight-bold);
+  color:         var(--color-text-primary);
+  margin-bottom: var(--space-1);
+  line-height:   var(--leading-tight);
+}
+
+.section-header__subtitle {
+  font-size: var(--text-base);
+  color:     var(--color-text-secondary);
+}
+
+
+/* ═══════════════════════════════════════
+   AUTH LAYOUT
+═══════════════════════════════════════ */
+.auth-layout {
+  min-height:      100vh;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  padding:         var(--space-4);
+  background:
+    url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80')
+    center / cover no-repeat;
+  position: relative;
+}
+
+/* Overlay que suaviza la foto de fondo */
+.auth-layout::before {
+  content:         '';
+  position:        absolute;
+  inset:           0;
+  background:      rgba(180, 195, 215, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+/* ═══════════════════════════════════════
+   SELECT-USER LAYOUT
+═══════════════════════════════════════ */
+.select-layout {
+  min-height:      100vh;
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: center;
+  padding:         var(--space-10) var(--space-4);
+  background:
+    url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&q=80')
+    center / cover no-repeat;
+  position: relative;
+}
+
+.select-layout::before {
+  content:         '';
+  position:        absolute;
+  inset:           0;
+  background:      rgba(180, 195, 215, 0.60);
+  backdrop-filter: blur(2px);
+}
+
+/* ── Profile cards grid ── */
+.profile-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   var(--space-5);
+  width:                 100%;
+  max-width:             56rem;
+  position:              relative;
+  z-index:               1;
+}
+
+/* ── TAREA-3: 2 tarjetas centradas horizontal y verticalmente ── */
+.profile-grid--two {
+  display:               grid;
+  grid-template-columns: repeat(2, minmax(0, 340px));
+  gap:                   var(--space-6);
+  justify-content:       center;
+  align-items:           stretch;
+  position:              relative;
+  z-index:               1;
+  width:                 100%;
+}
+
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — Mobile-first breakpoints
+═══════════════════════════════════════ */
+
+/* ── sm: 640px ── */
+@media (max-width: 639px) {
+  .page                { padding: var(--space-4);  }
+  .grid--stats         { grid-template-columns: 1fr; }
+  .grid--products      { grid-template-columns: 1fr; }
+  .profile-grid        { grid-template-columns: 1fr; }
+  .profile-grid--two   { grid-template-columns: 1fr; gap: var(--space-4); }
+  .section-header      { flex-direction: column; align-items: flex-start; }
+  .container           { padding: 0 var(--space-4); }
+}
+
+/* ── md: 768px ── */
+@media (min-width: 640px) and (max-width: 767px) {
+  .grid--products { grid-template-columns: repeat(2, 1fr); }
+  .profile-grid   { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── lg: 1024px ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid--products { grid-template-columns: repeat(3, 1fr); }
+  .grid--stats    { grid-template-columns: repeat(3, 1fr); }
+}
+
+
