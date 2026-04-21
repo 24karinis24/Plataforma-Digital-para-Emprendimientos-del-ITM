@@ -1,0 +1,38 @@
+[
+  {
+    "id": "user-001",
+    "name": "María García",
+    "email": "maria@itm.edu.co",
+    "role": "entrepreneur",
+    "businessName": "Artesanías García",
+    "businessDescription": "Taller de artesanías en madera y joyería artesanal.",
+    "avatar": null,
+    "createdAt": "2025-09-01"
+  },
+  {
+    "id": "user-002",
+    "name": "Carlos López",
+    "email": "carlos@itm.edu.co",
+    "role": "entrepreneur",
+    "businessName": "Sabores Naturales López",
+    "businessDescription": "Productos alimenticios naturales y orgánicos.",
+    "avatar": null,
+    "createdAt": "2025-10-15"
+  },
+  {
+    "id": "user-003",
+    "name": "Ana Martínez",
+    "email": "ana@itm.edu.co",
+    "role": "buyer",
+    "avatar": null,
+    "createdAt": "2026-01-10"
+  },
+  {
+    "id": "user-admin",
+    "name": "Administrador ITM",
+    "email": "admin@itm.edu.co",
+    "role": "admin",
+    "avatar": null,
+    "createdAt": "2025-01-01"
+  }
+]
