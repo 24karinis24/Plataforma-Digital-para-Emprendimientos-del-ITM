@@ -1,0 +1,234 @@
+/*
+ * image-upload.css — Image Upload Component Styles
+ *
+ * Covers all states of a .file-upload[data-upload-id] zone:
+ *   idle         → default dashed border, upload icon, prompt text
+ *   drag-over    → highlighted border + tinted background (--drag-over)
+ *   loading      → spinner during FileReader processing
+ *   loaded       → image preview + file name + action buttons
+ *   error        → red border + inline error message
+ *
+ * All state modifiers follow BEM: .file-upload--{state}
+ */
+
+/* ════════════════════════════════════════
+   BASE — Idle state
+════════════════════════════════════════ */
+.file-upload {
+  position:        relative;
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: center;
+  gap:             var(--space-2);
+  padding:         var(--space-6);
+  border:          2px dashed var(--color-border);
+  border-radius:   var(--radius-md);
+  cursor:          pointer;
+  min-height:      8rem;
+  text-align:      center;
+  outline:         none;
+  /* Smooth transitions between all states */
+  transition:
+    border-color  150ms ease,
+    background    150ms ease,
+    box-shadow    150ms ease;
+  /* Prevent text selection while dragging */
+  user-select:     none;
+  -webkit-user-select: none;
+}
+
+/* Hover (idle only — loaded state overrides cursor) */
+.file-upload:hover:not(.file-upload--loaded):not(.file-upload--error) {
+  border-color: var(--brand-500);
+  background:   var(--brand-050);
+}
+
+/* Keyboard focus */
+.file-upload:focus-visible {
+  border-color: var(--brand-500);
+  box-shadow:   0 0 0 3px rgba(45, 74, 155, 0.18);
+}
+
+/* Idle prompt (icon + labels) */
+.file-upload__prompt {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:            var(--space-2);
+  pointer-events: none; /* clicks fall through to container */
+}
+
+.file-upload__icon {
+  width:        2rem;
+  height:       2rem;
+  stroke:       var(--color-text-muted);
+  stroke-width: 1.5;
+  fill:         none;
+  flex-shrink:  0;
+  transition:   stroke var(--transition-base);
+}
+
+.file-upload__title {
+  font-size:   var(--text-base);
+  font-weight: var(--weight-semibold);
+  color:       var(--color-text-secondary);
+}
+
+.file-upload__subtitle {
+  font-size: var(--text-xs);
+  color:     var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+
+/* ════════════════════════════════════════
+   STATE: drag-over
+   Applied on dragenter/dragover events.
+════════════════════════════════════════ */
+.file-upload--drag-over {
+  border-color: var(--brand-500);
+  background:   var(--brand-050);
+  box-shadow:   0 0 0 4px rgba(45, 74, 155, 0.12);
+}
+
+/* Scale up the icon slightly for visual feedback */
+.file-upload--drag-over .file-upload__icon {
+  stroke:    var(--brand-500);
+  transform: scale(1.15);
+}
+
+.file-upload--drag-over .file-upload__title {
+  color: var(--brand-700);
+}
+
+
+/* ════════════════════════════════════════
+   STATE: loading
+   Shown while FileReader reads the file.
+════════════════════════════════════════ */
+.file-upload__loading {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:            var(--space-3);
+  pointer-events: none;
+}
+
+/* CSS-only spinner — no JS animation lib needed */
+.file-upload__spinner {
+  width:        2rem;
+  height:       2rem;
+  border:       3px solid var(--color-border);
+  border-top-color: var(--brand-700);
+  border-radius:var(--radius-full);
+  animation:    upload-spin 0.7s linear infinite;
+}
+
+@keyframes upload-spin {
+  to { transform: rotate(360deg); }
+}
+
+.file-upload__loading-text {
+  font-size: var(--text-sm);
+  color:     var(--color-text-muted);
+}
+
+
+/* ════════════════════════════════════════
+   STATE: loaded (image preview)
+════════════════════════════════════════ */
+.file-upload--loaded {
+  /* Switch from dashed to solid border on success */
+  border-style:  solid;
+  border-color:  var(--color-success-base);
+  background:    var(--color-surface);
+  cursor:        default;
+  padding:       0;
+  gap:           0;
+  /* Accommodate the full-width preview image */
+  align-items:   stretch;
+}
+
+/* Image preview area */
+.file-upload__preview {
+  flex:          1;
+  overflow:      hidden;
+  border-radius: calc(var(--radius-md) - 2px) calc(var(--radius-md) - 2px) 0 0;
+  background:    var(--color-bg-subtle);
+  min-height:    10rem;
+  max-height:    14rem;
+}
+
+.file-upload__preview-img {
+  width:       100%;
+  height:      100%;
+  object-fit:  contain;  /* contain (not cover) to show full image without cropping */
+  display:     block;
+}
+
+/* Filename + action buttons row */
+.file-upload__preview-meta {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             var(--space-3);
+  padding:         var(--space-3) var(--space-4);
+  border-top:      1px solid var(--color-border);
+  background:      var(--color-surface);
+  border-radius:   0 0 calc(var(--radius-md) - 2px) calc(var(--radius-md) - 2px);
+  flex-shrink:     0;
+}
+
+.file-upload__preview-name {
+  font-size:     var(--text-sm);
+  color:         var(--color-text-secondary);
+  font-weight:   var(--weight-medium);
+  overflow:      hidden;
+  text-overflow: ellipsis;
+  white-space:   nowrap;
+  max-width:     12rem;
+}
+
+.file-upload__preview-actions {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-2);
+  flex-shrink: 0;
+}
+
+
+/* ════════════════════════════════════════
+   STATE: error
+   Border turns red, error message appears below the prompt.
+════════════════════════════════════════ */
+.file-upload--error {
+  border-color: var(--color-danger-base);
+  background:   var(--color-danger-bg);
+}
+
+.file-upload--error .file-upload__icon {
+  stroke: var(--color-danger-base);
+}
+
+.file-upload__error {
+  margin-top:  var(--space-3);
+  font-size:   var(--text-sm);
+  font-weight: var(--weight-medium);
+  color:       var(--color-danger-fg);
+  line-height: var(--leading-snug);
+  max-width:   22rem;
+}
+
+
+/* ════════════════════════════════════════
+   Responsive
+════════════════════════════════════════ */
+@media (max-width: 639px) {
+  .file-upload__preview-meta {
+    flex-direction: column;
+    align-items:    flex-start;
+    gap:            var(--space-2);
+  }
+  .file-upload__preview-name { max-width: none; }
+}

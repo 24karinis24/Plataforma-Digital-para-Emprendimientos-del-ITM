@@ -1,0 +1,68 @@
+/*
+ * footer.css — Page Footer (BEM)
+ *
+ * Sits at the bottom of each page (not fixed/sticky).
+ * Mirrors the navbar's visual language for brand consistency.
+ */
+
+.footer {
+  background:      var(--brand-800);
+  color:           rgba(255,255,255,0.75);
+  padding:         var(--space-5) var(--space-6);
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             var(--space-4);
+  margin-top:      auto;
+}
+
+/* ── Brand cluster (mirrors navbar) ── */
+.footer__brand {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-3);
+}
+
+.footer__logo {
+  width:           1.75rem;
+  height:          1.75rem;
+  background:      rgba(255,255,255,0.12);
+  border-radius:   var(--radius-sm);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  flex-shrink:     0;
+}
+.footer__logo svg { width: 0.9375rem; height: 0.9375rem; fill: var(--color-text-inverse); }
+
+.footer__brand-name {
+  font-size:   var(--text-sm);
+  font-weight: var(--weight-bold);
+  color:       var(--color-text-inverse);
+  line-height: var(--leading-snug);
+}
+
+.footer__brand-sub {
+  font-size: var(--text-xs);
+  opacity:   0.65;
+  margin-top: 1px;
+}
+
+/* ── Right: copyright info ── */
+.footer__copy {
+  text-align:  right;
+  font-size:   var(--text-xs);
+  line-height: var(--leading-relaxed);
+  opacity:     0.65;
+}
+
+/* Responsive */
+@media (max-width: 639px) {
+  .footer {
+    flex-direction: column;
+    text-align:     center;
+    padding:        var(--space-4);
+    gap:            var(--space-2);
+  }
+  .footer__copy { text-align: center; }
+}

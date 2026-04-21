@@ -1,0 +1,327 @@
+/*
+ * form.css — Form Components (BEM)
+ *
+ * Covers: .form-group, .form-label, .form-control,
+ *         .form-hint, .form-error, .form-grid,
+ *         .file-upload, .toggle
+ */
+
+/* ── Group: label + control + hint wrapper ── */
+.form-group {
+  display:       flex;
+  flex-direction:column;
+  gap:           var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.form-group:last-of-type { margin-bottom: 0; }
+
+/* ── Label ── */
+.form-label {
+  font-size:   var(--text-base);
+  font-weight: var(--weight-medium);
+  color:       var(--color-text-primary);
+  line-height: var(--leading-snug);
+}
+
+/* ── Base control (input, textarea, select share this) ── */
+.form-control {
+  width:         100%;
+  padding:       0.625rem 0.75rem;  /* 10px 12px */
+  background:    var(--color-surface);
+  border:        1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size:     var(--text-base);
+  color:         var(--color-text-primary);
+  line-height:   var(--leading-snug);
+  transition:    border-color var(--transition-base), box-shadow var(--transition-base);
+  outline:       none;
+}
+
+.form-control::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-control:hover:not(:disabled):not([readonly]) {
+  border-color: var(--color-border-strong);
+}
+
+.form-control:focus-visible {
+  border-color: var(--brand-500);
+  box-shadow:   0 0 0 3px rgba(45, 74, 155, 0.15);
+  outline:      none;
+}
+
+/* ── State modifiers ── */
+.form-control--readonly,
+.form-control[readonly] {
+  background: var(--color-bg-subtle);
+  color:      var(--color-text-secondary);
+  cursor:     default;
+}
+
+.form-control--error {
+  border-color: var(--color-danger-base);
+}
+.form-control--error:focus-visible {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+/* ── Textarea ── */
+textarea.form-control {
+  resize:     vertical;
+  min-height: 5rem;
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Select ── */
+select.form-control {
+  appearance:      none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:   no-repeat;
+  background-position: right 0.75rem center;
+  padding-right:   2.25rem;
+  cursor:          pointer;
+}
+
+/* ── Hint & Error messages ── */
+.form-hint {
+  font-size:  var(--text-sm);
+  color:      var(--color-text-muted);
+  line-height:var(--leading-snug);
+}
+
+.form-error {
+  font-size:  var(--text-sm);
+  color:      var(--color-danger-base);
+  font-weight:var(--weight-medium);
+  line-height:var(--leading-snug);
+}
+
+/* ── Two-column form grid ── */
+.form-grid--2 {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   var(--space-4);
+}
+
+/* ── Input with prefix icon ── */
+.form-input-icon {
+  position:     relative;
+  display:      flex;
+  align-items:  center;
+}
+.form-input-icon svg {
+  position:   absolute;
+  left:       0.75rem;
+  width:      1rem;
+  height:     1rem;
+  fill:       var(--color-text-muted);
+  pointer-events: none;
+}
+.form-input-icon .form-control {
+  padding-left: 2.25rem;
+}
+
+/* ══════════════════════════════
+   TOGGLE (switch)
+══════════════════════════════ */
+.toggle-row {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.toggle {
+  position:   relative;
+  display:    inline-flex;
+  width:      2.75rem;  /* 44px */
+  height:     1.5rem;   /* 24px */
+  flex-shrink:0;
+}
+
+.toggle__input {
+  position: absolute;
+  opacity:  0;
+  width:    0;
+  height:   0;
+}
+
+.toggle__track {
+  position:      absolute;
+  inset:         0;
+  background:    var(--neutral-300);
+  border-radius: var(--radius-full);
+  cursor:        pointer;
+  transition:    background var(--duration-slow) var(--ease-default);
+}
+
+.toggle__track::before {
+  content:       '';
+  position:      absolute;
+  width:         1.125rem;
+  height:        1.125rem;
+  left:          0.1875rem;
+  top:           0.1875rem;
+  background:    var(--color-surface);
+  border-radius: var(--radius-full);
+  box-shadow:    var(--shadow-xs);
+  transition:    transform var(--duration-slow) var(--ease-default);
+}
+
+.toggle__input:checked + .toggle__track {
+  background: var(--brand-700);
+}
+
+.toggle__input:checked + .toggle__track::before {
+  transform: translateX(1.25rem);
+}
+
+.toggle__label {
+  font-size:   var(--text-base);
+  font-weight: var(--weight-medium);
+  color:       var(--color-text-primary);
+  cursor:      pointer;
+}
+
+/* ══════════════════════════════
+   FILE UPLOAD
+══════════════════════════════ */
+.file-upload {
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: center;
+  gap:             var(--space-2);
+  padding:         var(--space-6);
+  border:          2px dashed var(--color-border);
+  border-radius:   var(--radius-md);
+  cursor:          pointer;
+  transition:
+    border-color  var(--transition-base),
+    background    var(--transition-base);
+  min-height:      7rem;
+  text-align:      center;
+}
+
+.file-upload:hover {
+  border-color: var(--brand-500);
+  background:   var(--brand-050);
+}
+
+.file-upload__icon {
+  width:  2rem;
+  height: 2rem;
+  fill:   none;
+  stroke: var(--color-text-muted);
+  stroke-width: 1.5;
+  margin-bottom: var(--space-1);
+}
+
+.file-upload__title {
+  font-size:   var(--text-base);
+  font-weight: var(--weight-semibold);
+  color:       var(--color-text-secondary);
+}
+
+.file-upload__subtitle {
+  font-size: var(--text-sm);
+  color:     var(--color-text-muted);
+}
+
+/* Responsive */
+@media (max-width: 639px) {
+  .form-grid--2 { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════════════
+   TAREA-1: Contador de caracteres
+══════════════════════════════════════════════ */
+
+/* Fila inferior de un campo: error (izq) + contador (der) */
+.form-field-footer {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  min-height:      1.2rem;
+  gap:             var(--space-2);
+}
+
+/* El error ocupa el espacio disponible */
+.form-field-footer .form-error {
+  flex:   1;
+  margin: 0;
+}
+
+/* Contador */
+.char-counter {
+  font-size:     var(--text-xs, 0.75rem);
+  color:         var(--color-text-muted);
+  white-space:   nowrap;
+  font-variant-numeric: tabular-nums;
+  transition:    color 0.15s;
+}
+
+/* Advertencia: ≥ 85% del límite */
+.char-counter--warn  { color: var(--color-warning-base, #d97706); }
+
+/* En el límite: 100% */
+.char-counter--limit { color: var(--color-danger-base,  #ef4444); font-weight: var(--weight-medium); }
+
+/* ══════════════════════════════════════════════
+   TAREA-2: Tarjeta de cuentas demo en auth
+══════════════════════════════════════════════ */
+
+.demo-hint {
+  margin-top:    var(--space-5);
+  padding:       var(--space-3) var(--space-4);
+  background:    var(--color-bg-subtle, #f8fafc);
+  border:        1px solid var(--color-border, #e2e8f0);
+  border-radius: var(--radius-md);
+  font-size:     var(--text-sm);
+}
+
+.demo-hint__title {
+  display:       flex;
+  align-items:   center;
+  gap:           var(--space-2);
+  font-weight:   var(--weight-medium);
+  color:         var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.demo-hint__row {
+  display:         flex;
+  align-items:     center;
+  gap:             var(--space-3);
+  width:           100%;
+  padding:         var(--space-2) var(--space-3);
+  margin-top:      var(--space-1);
+  background:      var(--color-surface, #fff);
+  border:          1px solid var(--color-border, #e2e8f0);
+  border-radius:   var(--radius-sm);
+  cursor:          pointer;
+  text-align:      left;
+  transition:      background 0.15s, border-color 0.15s;
+  font-size:       var(--text-sm);
+  font-family:     inherit;
+}
+
+.demo-hint__row:hover {
+  background:    var(--brand-50, #eef2ff);
+  border-color:  var(--brand-300, #93c5fd);
+}
+
+.demo-hint__role {
+  font-weight:   var(--weight-semibold);
+  color:         var(--brand-700, #1d4ed8);
+  min-width:     6rem;
+  flex-shrink:   0;
+}
+
+.demo-hint__creds {
+  color:       var(--color-text-secondary);
+  font-family: monospace;
+  font-size:   var(--text-xs);
+}
