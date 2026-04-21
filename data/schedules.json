@@ -1,0 +1,32 @@
+[
+  {
+    "id": "sched-001",
+    "sellerId": "user-001",
+    "dayOfWeek": "Lunes",
+    "startTime": "08:00",
+    "endTime": "12:00",
+    "locationName": "Campus ITM Fraternidad",
+    "address": "Calle 54A #30-01, Medellín",
+    "notes": "Puesto cerca a la biblioteca"
+  },
+  {
+    "id": "sched-002",
+    "sellerId": "user-001",
+    "dayOfWeek": "Miércoles",
+    "startTime": "14:00",
+    "endTime": "18:00",
+    "locationName": "Campus ITM Robledo",
+    "address": "Cra 65 #98A-10, Medellín",
+    "notes": "Frente a la cafetería principal"
+  },
+  {
+    "id": "sched-003",
+    "sellerId": "user-002",
+    "dayOfWeek": "Viernes",
+    "startTime": "10:00",
+    "endTime": "16:00",
+    "locationName": "Plaza de Mercado ITM",
+    "address": "Calle 54A #30-01, Medellín",
+    "notes": "Feria de emprendimientos"
+  }
+]
