@@ -1,0 +1,95 @@
+/*
+ * auth.css — Authentication Page Styles
+ */
+
+.auth-card {
+  position:      relative;
+  z-index:       1;
+  background:    var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding:       var(--space-8) var(--space-8) var(--space-10);
+  width:         26rem;       /* 416px */
+  max-width:     95vw;
+  box-shadow:    var(--shadow-xl);
+  text-align:    center;
+}
+
+.auth-card__logo {
+  width:           4rem;
+  height:          4rem;
+  border-radius:   var(--radius-full);
+  background:      var(--brand-800);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  margin:          0 auto var(--space-5);
+}
+.auth-card__logo svg { width: 2rem; height: 2rem; fill: var(--color-text-inverse); }
+
+.auth-card__title {
+  font-size:     var(--text-2xl);
+  font-weight:   var(--weight-bold);
+  margin-bottom: var(--space-1);
+  color:         var(--color-text-primary);
+}
+
+.auth-card__subtitle {
+  font-size:     var(--text-sm);
+  color:         var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+  line-height:   var(--leading-relaxed);
+}
+
+/* Tabs */
+.auth-tabs {
+  display:       flex;
+  background:    var(--color-bg-subtle);
+  border:        1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding:       var(--space-1);
+  margin-bottom: var(--space-6);
+  gap:           var(--space-1);
+}
+
+.auth-tab {
+  flex:          1;
+  padding:       var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size:     var(--text-base);
+  font-weight:   var(--weight-medium);
+  color:         var(--color-text-secondary);
+  transition:    background var(--transition-base), color var(--transition-base), box-shadow var(--transition-base);
+  border:        none;
+  background:    none;
+  cursor:        pointer;
+}
+
+.auth-tab--active {
+  background:  var(--color-surface);
+  color:       var(--color-text-primary);
+  font-weight: var(--weight-semibold);
+  box-shadow:  var(--shadow-sm);
+}
+
+
+/* ═══════════════════════════════════════════
+   AUTH FORM — Spacing fix
+   FIX: Submit button was touching the last form-group.
+   Add visual breathing room before the CTA.
+═══════════════════════════════════════════ */
+
+/* Space between last input field and submit button */
+.auth-card .btn--full {
+  margin-top: var(--space-6);
+}
+
+/* Ensure form-groups inside auth card have consistent bottom spacing */
+.auth-card .form-group {
+  margin-bottom: var(--space-4);
+}
+
+/* Last form-group before the button needs no extra bottom margin
+   since the button's margin-top handles the gap */
+.auth-card .form-group:last-of-type {
+  margin-bottom: 0;
+}
