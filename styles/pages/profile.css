@@ -1,0 +1,88 @@
+/*
+ * profile.css — Profile Page Styles
+ */
+
+.profile-summary {
+  background:    var(--color-surface);
+  border:        1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding:       var(--space-5) var(--space-6);
+  display:       flex;
+  align-items:   center;
+  gap:           var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.profile-summary__name {
+  font-size:   var(--text-xl);
+  font-weight: var(--weight-bold);
+  color:       var(--color-text-primary);
+  line-height: var(--leading-tight);
+}
+
+.profile-summary__role {
+  font-size:  var(--text-base);
+  color:      var(--color-text-secondary);
+  margin-top: var(--space-1);
+}
+
+.profile-form-card {
+  background:    var(--color-surface);
+  border:        1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding:       var(--space-6);
+  margin-bottom: var(--space-5);
+}
+
+.profile-form-card__title    { font-size: var(--text-lg); font-weight: var(--weight-bold); color: var(--color-text-primary); margin-bottom: var(--space-1); }
+.profile-form-card__subtitle { font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: var(--space-6); }
+
+@media (max-width: 639px) {
+  .profile-summary { flex-direction: column; text-align: center; }
+}
+
+/* ═══════════════════════════════════════
+   FIX-1: Vista de perfil (modo lectura)
+═══════════════════════════════════════ */
+.profile-view-rows {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-4);
+}
+
+.profile-view-row {
+  display:       grid;
+  grid-template-columns: 160px 1fr;
+  gap:           var(--space-3);
+  padding:       var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border-subtle, #eee);
+}
+
+.profile-view-row:last-child {
+  border-bottom: none;
+}
+
+.profile-view-row__label {
+  font-weight: var(--weight-medium, 500);
+  color:       var(--color-text-secondary);
+  font-size:   var(--text-sm);
+  padding-top: 2px;
+}
+
+.profile-view-row__value {
+  color:     var(--color-text-primary);
+  font-size: var(--text-sm);
+  word-break: break-word;
+}
+
+@media (max-width: 480px) {
+  .profile-view-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+  .profile-view-row__label {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+}
