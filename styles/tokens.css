@@ -1,0 +1,179 @@
+/*
+ * tokens.css — Design System Tokens
+ *
+ * Single source of truth for every visual value in the UI.
+ * Named with semantic intent (--color-action vs --color-blue-700)
+ * so consuming code communicates purpose, not implementation.
+ *
+ * Organized by: Color → Typography → Spacing → Shape → Shadow → Motion
+ */
+
+:root {
+  /* ───────────────────────────────────────
+     COLOR — Brand Palette
+  ─────────────────────────────────────── */
+  --brand-900: #0f1b3d;
+  --brand-800: #1a2744;   /* navbar, footer bg              */
+  --brand-700: #1e3268;   /* primary buttons                */
+  --brand-600: #243a7a;   /* hover states                   */
+  --brand-500: #2d4a9b;   /* links, accents                 */
+  --brand-100: #dbeafe;   /* light tint backgrounds         */
+  --brand-050: #eff6ff;   /* very light bg                  */
+
+  /* ───────────────────────────────────────
+     COLOR — Neutral
+  ─────────────────────────────────────── */
+  --neutral-950: #0f172a;
+  --neutral-900: #1e293b;  /* primary text                   */
+  --neutral-700: #334155;
+  --neutral-600: #475569;  /* secondary text                 */
+  --neutral-400: #94a3b8;  /* placeholder, disabled          */
+  --neutral-300: #cbd5e1;  /* disabled borders               */
+  --neutral-200: #e2e8f0;  /* borders                        */
+  --neutral-100: #f1f5f9;  /* subtle backgrounds             */
+  --neutral-050: #f8fafc;  /* page background                */
+  --neutral-000: #ffffff;
+
+  /* ───────────────────────────────────────
+     COLOR — Semantic States
+  ─────────────────────────────────────── */
+  --color-success-bg:   #dcfce7;
+  --color-success-fg:   #166534;
+  --color-success-base: #22c55e;
+
+  --color-danger-bg:    #fee2e2;
+  --color-danger-fg:    #991b1b;
+  --color-danger-base:  #ef4444;
+  --color-danger-dark:  #dc2626;
+
+  --color-warning-bg:   #fef9c3;
+  --color-warning-fg:   #854d0e;
+
+  --color-info-bg:      #e0f2fe;
+  --color-info-fg:      #0369a1;
+
+  /* ───────────────────────────────────────
+     COLOR — Category Badges
+  ─────────────────────────────────────── */
+  --cat-artesanias-bg: #dbeafe;
+  --cat-artesanias-fg: #1d4ed8;
+  --cat-joyeria-bg:    #fce7f3;
+  --cat-joyeria-fg:    #be185d;
+  --cat-alimentos-bg:  #dcfce7;
+  --cat-alimentos-fg:  #166534;
+  --cat-ropa-bg:       #fef9c3;
+  --cat-ropa-fg:       #854d0e;
+  --cat-tecnologia-bg: #ede9fe;
+  --cat-tecnologia-fg: #5b21b6;
+
+  /* ───────────────────────────────────────
+     COLOR — Semantic Aliases
+     Rename palette values to functional names
+     so pages/components stay palette-agnostic.
+  ─────────────────────────────────────── */
+  --color-surface:        var(--neutral-000);
+  --color-surface-raised: var(--neutral-000);
+  --color-bg:             var(--neutral-050);
+  --color-bg-subtle:      var(--neutral-100);
+  --color-border:         var(--neutral-200);
+  --color-border-strong:  var(--neutral-300);
+
+  --color-text-primary:   var(--neutral-900);
+  --color-text-secondary: var(--neutral-600);
+  --color-text-muted:     var(--neutral-400);
+  --color-text-inverse:   var(--neutral-000);
+
+  --color-action:         var(--brand-700);
+  --color-action-hover:   var(--brand-800);
+  --color-action-light:   var(--brand-100);
+
+  /* ───────────────────────────────────────
+     TYPOGRAPHY
+  ─────────────────────────────────────── */
+  --font-sans: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
+
+  /* Scale — use step-up names, not px */
+  --text-xs:   0.6875rem;   /* 11px */
+  --text-sm:   0.75rem;     /* 12px */
+  --text-base: 0.875rem;    /* 14px */
+  --text-md:   0.9375rem;   /* 15px */
+  --text-lg:   1rem;        /* 16px */
+  --text-xl:   1.125rem;    /* 18px */
+  --text-2xl:  1.375rem;    /* 22px */
+  --text-3xl:  1.625rem;    /* 26px */
+  --text-4xl:  2.25rem;     /* 36px */
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold:600;
+  --weight-bold:    700;
+
+  --leading-tight:  1.2;
+  --leading-snug:   1.4;
+  --leading-normal: 1.5;
+  --leading-relaxed:1.6;
+
+  /* ───────────────────────────────────────
+     SPACING — 4px base unit
+  ─────────────────────────────────────── */
+  --space-1:  0.25rem;   /*  4px */
+  --space-2:  0.5rem;    /*  8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.25rem;   /* 20px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-8:  2rem;      /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+
+  /* ───────────────────────────────────────
+     SHAPE — Border Radius
+  ─────────────────────────────────────── */
+  --radius-sm:   0.375rem;  /*  6px */
+  --radius-md:   0.5rem;    /*  8px */
+  --radius-lg:   0.75rem;   /* 12px */
+  --radius-xl:   1rem;      /* 16px */
+  --radius-full: 9999px;
+
+  /* ───────────────────────────────────────
+     SHADOW
+  ─────────────────────────────────────── */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 24px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.06);
+  --shadow-xl: 0 20px 40px rgba(0,0,0,0.14), 0 8px 16px rgba(0,0,0,0.08);
+
+  /* ───────────────────────────────────────
+     MOTION — Transitions
+  ─────────────────────────────────────── */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:     cubic-bezier(0, 0, 0.2, 1);
+  --ease-in:      cubic-bezier(0.4, 0, 1, 1);
+
+  --duration-fast:   100ms;
+  --duration-base:   150ms;
+  --duration-slow:   250ms;
+
+  --transition-base: var(--duration-base) var(--ease-default);
+
+  /* ───────────────────────────────────────
+     LAYOUT — Structural Dimensions
+  ─────────────────────────────────────── */
+  --navbar-height:     3.5rem;   /* 56px */
+  --subnav-height:     3rem;     /* 48px */
+  --content-max-width: 75rem;    /* 1200px */
+  --content-narrow:    43.75rem; /* 700px */
+  --sidebar-width:     16rem;    /* 256px */
+
+  /* ───────────────────────────────────────
+     BREAKPOINTS (reference values only —
+     use in media queries, not calc())
+  ─────────────────────────────────────── */
+  /* sm:  640px  — large phone / small tablet  */
+  /* md:  768px  — tablet portrait             */
+  /* lg:  1024px — tablet landscape / laptop   */
+  /* xl:  1280px — desktop                     */
+}
