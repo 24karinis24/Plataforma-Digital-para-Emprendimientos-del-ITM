@@ -6,10 +6,134 @@
   <meta name="description" content="Plataforma de emprendimientos del Instituto Tecnológico Metropolitano — conecta emprendedores con la comunidad." />
   <title>Emprendimientos ITM</title>
 
+  <!--
+    Single CSS entry point.
+    All stylesheets are @imported from main.css in cascade order:
+    tokens → reset → base → layout → utilities → components → pages
+  -->
   <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
-<h1>Emprendimientos ITM</h1>
-<p>Bienvenido a la plataforma de emprendimientos del Instituto Tecnológico Metropolitano. Aquí puedes conectar con otros emprendedores y acceder a recursos valiosos para tu proyecto.</p>
+
+  <!-- ═══════════════════════════════════════════
+       VIEW: Authentication  (login / register)
+       Visible on initial load and after logout.
+  ═══════════════════════════════════════════ -->
+  <div id="auth-view" class="auth-layout">
+    <div class="auth-card">
+
+      <!-- Logo injected by Navbar.mountAuthLogo() -->
+      <div class="auth-card__logo" aria-hidden="true"></div>
+
+      <h1 class="auth-card__title">Emprendimientos ITM</h1>
+      <p class="auth-card__subtitle">Conectando emprendedores con la comunidad</p>
+
+      <!-- Tabs -->
+      <div class="auth-tabs" role="tablist" aria-label="Modo de acceso">
+        <button class="auth-tab auth-tab--active" id="auth-tab-login"
+                role="tab" aria-selected="true" aria-controls="form-login">
+          Iniciar Sesión
+        </button>
+        <button class="auth-tab" id="auth-tab-register"
+                role="tab" aria-selected="false" aria-controls="form-register">
+          Registrarse
+        </button>
+      </div>
+
+      <!-- Login form -->
+      <div id="form-login" role="tabpanel" aria-labelledby="auth-tab-login">
+        <div class="form-group">
+          <label class="form-label" for="login-email">Correo Electrónico</label>
+          <input class="form-control" type="email" id="login-email"
+                 placeholder="tu@email.com" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="login-pass">Contraseña</label>
+          <input class="form-control" type="password" id="login-pass"
+                 placeholder="••••••••" autocomplete="current-password" />
+        </div>
+        <button class="btn btn--primary btn--full" id="btn-login">Ingresar</button>
+      </div>
+
+      <!-- Register form -->
+      <div id="form-register" class="hidden" role="tabpanel" aria-labelledby="auth-tab-register">
+        <div class="form-group">
+          <label class="form-label" for="reg-name">Nombre Completo</label>
+          <input class="form-control" type="text" id="reg-name"
+                 placeholder="Tu nombre completo" autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="reg-email">Correo Electrónico</label>
+          <input class="form-control" type="email" id="reg-email"
+                 placeholder="tu@email.com" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="reg-pass">Contraseña</label>
+          <input class="form-control" type="password" id="reg-pass"
+                 placeholder="Mínimo 6 caracteres" autocomplete="new-password" />
+        </div>
+        <button class="btn btn--primary btn--full" id="btn-register">Crear Cuenta</button>
+      </div>
+
+    </div><!-- /.auth-card -->
+  </div><!-- /#auth-view -->
+
+
+  <!-- ═══════════════════════════════════════════
+       VIEW: Role Selection
+       Shown after login, before entering the app.
+  ═══════════════════════════════════════════ -->
+  <div id="select-view" class="select-layout hidden">
+    <div style="position:relative;z-index:1;width:100%;max-width:64rem;padding:0 var(--space-4)">
+      <div class="select-header">
+        <h1 class="select-header__title">Selecciona tu perfil</h1>
+        <p class="select-header__subtitle">Elige cómo quieres usar la plataforma</p>
+      </div>
+      <!-- Role cards injected by SelectUserPage.initSelectUserPage() -->
+      <div id="profile-cards" class="profile-grid"></div>
+    </div>
+  </div><!-- /#select-view -->
+
+
+  <!-- ═══════════════════════════════════════════
+       VIEW: Main Application Shell
+       Visible after role selection.
+       Contains fixed chrome + dynamic page area.
+  ═══════════════════════════════════════════ -->
+  <div id="app-view" class="app-shell hidden">
+
+    <!-- Top navbar — rendered by Navbar.mountNavbar() -->
+    <header id="main-navbar" class="navbar" role="banner"></header>
+
+    <!-- Entrepreneur sub-nav — rendered by Navbar.mountSubNav() -->
+    <div id="sub-nav" class="sub-nav hidden" role="tablist" aria-label="Secciones"></div>
+
+    <!-- Dynamic page content — replaced on every navigate() call -->
+    <div id="page-container" class="app-shell__content"></div>
+
+  </div><!-- /#app-view -->
+
+
+  <!-- ═══════════════════════════════════════════
+       GLOBAL: Modal overlay
+       One instance reused for all modal dialogs.
+       Content injected by Modal.openModal().
+  ═══════════════════════════════════════════ -->
+  <div id="modal-overlay" class="modal-overlay hidden" aria-hidden="true"></div>
+
+  <!-- Global help button -->
+  <button class="help-btn" aria-label="Ayuda y soporte" title="Ayuda">?</button>
+
+
+  <!--
+    ES Module entry point.
+    'type=module' gives us:
+      - Native import/export
+      - Deferred execution (no need for defer attribute)
+      - Strict mode by default
+      - Module-scoped variables (no global namespace pollution)
+  -->
+  <script type="module" src="scripts/app.js"></script>
+
 </body>
 </html>
