@@ -1,0 +1,16 @@
+📌 Credenciales simuladas por rol
+
+📁 Archivo: services/authService.js
+🔑 Exporta: DEMO_ACCOUNTS
+
+👤 Admin
+📧 admin@itm.edu.co
+🔒 admin123
+
+👤 Emprendedor
+📧 emprendedor@itm.edu.co
+🔒 emprendedor123
+
+👤 Comprador
+📧 comprador@itm.edu.co
+🔒 comprador123
