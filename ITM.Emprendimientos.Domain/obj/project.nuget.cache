@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "1BUaU/iWQRk=",
+  "dgSpecHash": "DsTaNWCQcQE=",
   "success": true,
-  "projectFilePath": "C:\\Repositorios\\Plataforma-Digital-para-Emprendimientos-del-ITM\\ITM.Emprendimientos.Domain\\ITM.Emprendimientos.Domain.csproj",
+  "projectFilePath": "C:\\Users\\mechi\\Desktop\\Backend\\Plataforma-Digital-para-Emprendimientos-del-ITM\\ITM.Emprendimientos.Domain\\ITM.Emprendimientos.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.8\\microsoft.extensions.dependencyinjection.abstractions.10.0.8.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.8\\microsoft.extensions.logging.abstractions.10.0.8.nupkg.sha512"
+    "C:\\Users\\mechi\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.8\\microsoft.extensions.dependencyinjection.abstractions.10.0.8.nupkg.sha512",
+    "C:\\Users\\mechi\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.8\\microsoft.extensions.logging.abstractions.10.0.8.nupkg.sha512"
   ],
   "logs": []
 }

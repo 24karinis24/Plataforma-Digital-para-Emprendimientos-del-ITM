@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net10.0": {
       "Microsoft.Extensions.DependencyInjection.Abstractions/10.0.8": {
@@ -150,23 +150,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
+    "C:\\Users\\mechi\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Repositorios\\Plataforma-Digital-para-Emprendimientos-del-ITM\\ITM.Emprendimientos.Domain\\ITM.Emprendimientos.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\mechi\\Desktop\\Backend\\Plataforma-Digital-para-Emprendimientos-del-ITM\\ITM.Emprendimientos.Domain\\ITM.Emprendimientos.Domain.csproj",
       "projectName": "ITM.Emprendimientos.Domain",
-      "projectPath": "C:\\Repositorios\\Plataforma-Digital-para-Emprendimientos-del-ITM\\ITM.Emprendimientos.Domain\\ITM.Emprendimientos.Domain.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Repositorios\\Plataforma-Digital-para-Emprendimientos-del-ITM\\ITM.Emprendimientos.Domain\\obj\\",
+      "projectPath": "C:\\Users\\mechi\\Desktop\\Backend\\Plataforma-Digital-para-Emprendimientos-del-ITM\\ITM.Emprendimientos.Domain\\ITM.Emprendimientos.Domain.csproj",
+      "packagesPath": "C:\\Users\\mechi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mechi\\Desktop\\Backend\\Plataforma-Digital-para-Emprendimientos-del-ITM\\ITM.Emprendimientos.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mechi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -180,6 +180,7 @@
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {}
         }
@@ -194,10 +195,11 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net10.0": {
+        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": {
@@ -221,7 +223,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.204/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
