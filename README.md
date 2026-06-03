@@ -21,7 +21,7 @@
 > **Esta rama (`main`) contiene únicamente el frontend en modo simulación.**
 > No existe backend ni base de datos conectada. Toda la lógica, autenticación y persistencia se simulan con **JavaScript puro en el navegador** (estado en memoria RAM, sin `localStorage`).
 >
-> 👉 Para ver el backend en C#, cambia a la rama [`proyecto-backend`](../../tree/proyecto-backend).
+> 👉 Para ver el backend en C#, cambia a la rama [`Proyecto-Backend`](../../tree/Proyecto-Backend).
 
 > [!NOTE]
 > 👋 ¡Bienvenido al repositorio! Este proyecto está en construcción activa y seguirá evolucionando. Las contribuciones y sugerencias son bienvenidas.
@@ -321,7 +321,7 @@ El backend de este proyecto (en **C#**) se encuentra en una rama separada:
 git checkout proyecto-backend
 ```
 
-O directamente en GitHub: [`proyecto-backend`](../../tree/proyecto-backend)
+O directamente en GitHub: [`proyecto-backend`](../../tree/Proyecto-Backend)
 
 ---
 
