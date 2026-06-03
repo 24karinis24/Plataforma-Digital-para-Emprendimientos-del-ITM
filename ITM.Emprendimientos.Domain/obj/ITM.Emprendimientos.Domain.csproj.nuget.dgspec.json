@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repositorios\\Plataforma-Digital-para-Emprendimientos-del-ITM\\ITM.Emprendimientos.Domain\\ITM.Emprendimientos.Domain.csproj": {}
+    "C:\\Repositorios\\p\\Proyecto\\ITM.Emprendimientos\\ITM.Emprendimientos.Domain\\ITM.Emprendimientos.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Repositorios\\Plataforma-Digital-para-Emprendimientos-del-ITM\\ITM.Emprendimientos.Domain\\ITM.Emprendimientos.Domain.csproj": {
+    "C:\\Repositorios\\p\\Proyecto\\ITM.Emprendimientos\\ITM.Emprendimientos.Domain\\ITM.Emprendimientos.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repositorios\\Plataforma-Digital-para-Emprendimientos-del-ITM\\ITM.Emprendimientos.Domain\\ITM.Emprendimientos.Domain.csproj",
+        "projectUniqueName": "C:\\Repositorios\\p\\Proyecto\\ITM.Emprendimientos\\ITM.Emprendimientos.Domain\\ITM.Emprendimientos.Domain.csproj",
         "projectName": "ITM.Emprendimientos.Domain",
-        "projectPath": "C:\\Repositorios\\Plataforma-Digital-para-Emprendimientos-del-ITM\\ITM.Emprendimientos.Domain\\ITM.Emprendimientos.Domain.csproj",
+        "projectPath": "C:\\Repositorios\\p\\Proyecto\\ITM.Emprendimientos\\ITM.Emprendimientos.Domain\\ITM.Emprendimientos.Domain.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Repositorios\\Plataforma-Digital-para-Emprendimientos-del-ITM\\ITM.Emprendimientos.Domain\\obj\\",
+        "outputPath": "C:\\Repositorios\\p\\Proyecto\\ITM.Emprendimientos\\ITM.Emprendimientos.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -31,6 +31,7 @@
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {}
           }
@@ -49,6 +50,7 @@
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
             "Microsoft.Extensions.Logging.Abstractions": {

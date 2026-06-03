@@ -1,0 +1,579 @@
+[
+  {
+    "ContainingType": "Program\u002B\u003C\u003Ec",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_4",
+    "RelativePath": "",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.CategoriasController",
+    "Method": "ObtenerTodas",
+    "RelativePath": "api/Categorias",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.CategoriasController",
+    "Method": "Crear",
+    "RelativePath": "api/Categorias",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ITM.Emprendimientos.Application.DTOs.Requests.CategoriaRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.CategoriasController",
+    "Method": "ObtenerPorId",
+    "RelativePath": "api/Categorias/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.CategoriasController",
+    "Method": "Actualizar",
+    "RelativePath": "api/Categorias/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ITM.Emprendimientos.Application.DTOs.Requests.CategoriaRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.CategoriasController",
+    "Method": "Eliminar",
+    "RelativePath": "api/Categorias/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.HorariosController",
+    "Method": "ObtenerPorEmprendedor",
+    "RelativePath": "api/Horarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "emprendedorId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.HorariosController",
+    "Method": "Crear",
+    "RelativePath": "api/Horarios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ITM.Emprendimientos.Application.DTOs.Requests.CrearHorarioRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.HorariosController",
+    "Method": "Actualizar",
+    "RelativePath": "api/Horarios/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ITM.Emprendimientos.Application.DTOs.Requests.ActualizarHorarioRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.HorariosController",
+    "Method": "Eliminar",
+    "RelativePath": "api/Horarios/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.PerfilesController",
+    "Method": "ObtenerPerfil",
+    "RelativePath": "api/Perfiles/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.PerfilesController",
+    "Method": "ActualizarAdmin",
+    "RelativePath": "api/Perfiles/{id}/admin",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Descripcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Foto",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.PerfilesController",
+    "Method": "ActualizarComprador",
+    "RelativePath": "api/Perfiles/{id}/comprador",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Apodo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SobreTi",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Foto",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.PerfilesController",
+    "Method": "ActualizarEmprendedor",
+    "RelativePath": "api/Perfiles/{id}/emprendedor",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "NombreEmprendimiento",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descripcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Foto",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.PerfilesController",
+    "Method": "ObtenerPerfilPublico",
+    "RelativePath": "api/Perfiles/publico/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.ProductosController",
+    "Method": "ObtenerCatalogo",
+    "RelativePath": "api/Productos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "busqueda",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "categoriaId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.ProductosController",
+    "Method": "Crear",
+    "RelativePath": "api/Productos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Nombre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descripcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Precio",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "CategoriaId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Imagen",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.ProductosController",
+    "Method": "ObtenerDetalle",
+    "RelativePath": "api/Productos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.ProductosController",
+    "Method": "Actualizar",
+    "RelativePath": "api/Productos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Nombre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descripcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Precio",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "CategoriaId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Imagen",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.ProductosController",
+    "Method": "Eliminar",
+    "RelativePath": "api/Productos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.ProductosController",
+    "Method": "CambiarEstado",
+    "RelativePath": "api/Productos/{id}/estado",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ITM.Emprendimientos.Application.DTOs.Requests.CambiarEstadoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.ProductosController",
+    "Method": "ObtenerTodosAdmin",
+    "RelativePath": "api/Productos/admin",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "busqueda",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "categoriaId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.ProductosController",
+    "Method": "ObtenerEstadisticas",
+    "RelativePath": "api/Productos/estadisticas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.ProductosController",
+    "Method": "ObtenerMisProductos",
+    "RelativePath": "api/Productos/mis-productos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.UbicacionesController",
+    "Method": "ObtenerPorEmprendedor",
+    "RelativePath": "api/Ubicaciones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "emprendedorId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.UbicacionesController",
+    "Method": "Crear",
+    "RelativePath": "api/Ubicaciones",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ITM.Emprendimientos.Application.DTOs.Requests.CrearUbicacionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.UbicacionesController",
+    "Method": "Actualizar",
+    "RelativePath": "api/Ubicaciones/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ITM.Emprendimientos.Application.DTOs.Requests.ActualizarUbicacionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.UbicacionesController",
+    "Method": "Eliminar",
+    "RelativePath": "api/Ubicaciones/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.UsuariosController",
+    "Method": "Login",
+    "RelativePath": "api/Usuarios/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ITM.Emprendimientos.Application.DTOs.Requests.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ITM.Emprendimientos.API.Controllers.UsuariosController",
+    "Method": "Registro",
+    "RelativePath": "api/Usuarios/registro",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ITM.Emprendimientos.Application.DTOs.Requests.RegistroRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
