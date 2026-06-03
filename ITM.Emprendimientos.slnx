@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ITM.Emprendimientos.API/ITM.Emprendimientos.API.csproj" />
+  <Project Path="ITM.Emprendimientos.Application/ITM.Emprendimientos.Application.csproj" />
+  <Project Path="ITM.Emprendimientos.DataAccess/ITM.Emprendimientos.DataAccess.csproj" />
+  <Project Path="ITM.Emprendimientos.Domain/ITM.Emprendimientos.Domain.csproj" />
+</Solution>
