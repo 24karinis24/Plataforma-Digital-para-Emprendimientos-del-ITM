@@ -48,10 +48,9 @@
 12. [Pasos para Ejecutar el Proyecto](#-pasos-para-ejecutar-el-proyecto)
 13. [API — Endpoints y Validaciones](#-api--endpoints-y-validaciones)
 14. [Manejo Global de Errores](#-manejo-global-de-errores)
-15. [Despliegue](#-despliegue)
-16. [Evidencias del MVP](#-evidencias-del-mvp)
-17. [Consideraciones Técnicas](#-consideraciones-técnicas)
-18. [Mejoras Futuras](#-mejoras-futuras)
+15. [Evidencias del MVP](#-evidencias-del-mvp)
+16. [Consideraciones Técnicas](#-consideraciones-técnicas)
+17. [Mejoras Futuras](#-mejoras-futuras)
 
 ---
 
@@ -1582,56 +1581,6 @@ El `ErrorHandlingMiddleware` intercepta **todas** las excepciones no controladas
 > Los controladores no usan bloques `try/catch`. Todo el manejo de errores está centralizado en el middleware.
 
 ---
-
-## 🌐 Despliegue
-
-```
-[PENDIENTE: Agregar URL de despliegue]
-```
-
----
-
-## 📸 Evidencias del MVP
-
-### Swagger UI — Endpoints documentados
-
-[Insertar captura de la interfaz de Swagger con todos los módulos expandidos]
-
-### POST /api/Usuarios/registro — Request y Response
-
-[Insertar captura en Swagger o Postman mostrando el body y el JWT recibido]
-
-### POST /api/Usuarios/login — Token JWT
-
-[Insertar captura del login exitoso y la decodificación del token]
-
-### GET /api/Productos — Catálogo del Comprador
-
-[Insertar captura del catálogo filtrado]
-
-### GET /api/Productos/mis-productos — Vista del Emprendedor
-
-[Insertar captura del listado de productos propios]
-
-### POST /api/Productos — Creación con imagen
-
-[Insertar captura del formulario multipart/form-data y la respuesta 201]
-
-### PATCH /api/Productos/{id}/estado — Cambio de estado
-
-[Insertar captura del request con acción y motivo, y la auditoría generada]
-
-### PUT /api/Perfiles/{id}/emprendedor — Actualización de perfil
-
-[Insertar captura del formulario con foto]
-
-### POST /api/Horarios y POST /api/Ubicaciones
-
-[Insertar capturas de creación exitosa]
-
-### Base de Datos — Tablas en SQL Server
-
-[Insertar captura de SSMS mostrando todas las tablas creadas]
 
 ---
 
