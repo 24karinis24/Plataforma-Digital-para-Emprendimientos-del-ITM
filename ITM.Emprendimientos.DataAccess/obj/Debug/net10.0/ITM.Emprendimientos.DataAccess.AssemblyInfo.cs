@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ITM.Emprendimientos.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d96815c8b7972373e958d52ccd8bfa283df3e073")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b64de1b0413797170fa30120c5984477d8e534a")]
 [assembly: System.Reflection.AssemblyProductAttribute("ITM.Emprendimientos.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ITM.Emprendimientos.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
