@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "l3JQwMT+qps=",
+  "dgSpecHash": "1BUaU/iWQRk=",
   "success": true,
   "projectFilePath": "C:\\Repositorios\\Plataforma-Digital-para-Emprendimientos-del-ITM\\ITM.Emprendimientos.Domain\\ITM.Emprendimientos.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.8\\microsoft.extensions.dependencyinjection.abstractions.10.0.8.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.8\\microsoft.extensions.logging.abstractions.10.0.8.nupkg.sha512"
+  ],
   "logs": []
 }
